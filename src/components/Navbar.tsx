@@ -1,20 +1,20 @@
-"use client";
-import Link from "next/link";
-import { Logo } from "./SVGS";
-import { Wrapper } from "./wrapper";
-import { Button } from "./Button";
-import { usePathname } from "next/navigation";
-import { twMerge } from "tailwind-merge";
-import { useState } from "react";
+'use client';
+import Link from 'next/link';
+import { Logo } from './SVGS';
+import { Wrapper } from './wrapper';
+import { Button } from './Button';
+import { usePathname } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
+import { useState } from 'react';
 
 const navLinkOne = [
   {
-    label: "Home",
-    path: "/",
+    label: 'Home',
+    path: '/',
   },
   {
-    label: "A famiglia",
-    path: "/sobre",
+    label: 'A famiglia',
+    path: '/sobre',
   },
 ];
 
@@ -29,19 +29,17 @@ export const Navbar = () => {
             <Link
               href={link.path}
               className={twMerge(
-                "uppercase text-white transition-all duration-500 hover:text-ouro",
-                link.path === path && "text-ouro"
+                'uppercase text-white transition-all duration-500 hover:text-ouro',
+                link.path === path && 'text-ouro',
               )}
-              key={index}
-            >
+              key={index}>
               {link.label}
             </Link>
           ))}
           <a
             href="/enoturismo"
             className="uppercase text-white transition-all duration-500 hover:text-ouro"
-            target="_blank"
-          >
+            target="_blank">
             Enoturismo
           </a>
         </div>
@@ -51,17 +49,15 @@ export const Navbar = () => {
         <div className="flex items-center justify-end gap-12 border-b border-white w-[453px] h-[86px]">
           <Link
             href="/blog"
-            className="uppercase text-white transition-all duration-500 hover:text-ouro"
-          >
+            className="uppercase text-white transition-all duration-500 hover:text-ouro">
             Blog
           </Link>
           <Link
             href="/contato"
             className={twMerge(
-              "uppercase text-white transition-all duration-500 hover:text-ouro",
-              "/contato" === path && "text-ouro"
-            )}
-          >
+              'uppercase text-white transition-all duration-500 hover:text-ouro',
+              '/contato' === path && 'text-ouro',
+            )}>
             Contato
           </Link>
           <Button className="font-mont text-sm font-normal">
@@ -75,20 +71,17 @@ export const Navbar = () => {
         </Link>
         <span
           onClick={() => setIsOpen(true)}
-          className="absolute right-0 top-1/2 -translate-x-1/2 text-white uppercase font-basker cursor-pointer"
-        >
+          className="absolute right-0 top-1/2 -translate-x-1/2 text-white uppercase font-basker cursor-pointer">
           Menu
         </span>
         <div
           className={twMerge(
-            "fixed top-0 right-full w-full h-screen bg-black transition-all duration-500 z-50 flex items-center justify-center",
-            isOpen && "right-0"
-          )}
-        >
+            'fixed -top-11 right-full w-full h-screen bg-black transition-all duration-500 z-50 flex items-center justify-center',
+            isOpen && 'right-0',
+          )}>
           <span
             className="absolute right-9 top-9 text-white z-20 uppercase font-basker cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          >
+            onClick={() => setIsOpen(false)}>
             Fechar
           </span>
           <div className="flex items-center flex-col justify-start gap-12">
@@ -96,35 +89,31 @@ export const Navbar = () => {
               <Link
                 href={link.path}
                 className={twMerge(
-                  "uppercase text-white transition-all duration-500 hover:text-ouro text-xl",
-                  link.path === path && "text-ouro"
+                  'uppercase text-white transition-all duration-500 hover:text-ouro text-xl',
+                  link.path === path && 'text-ouro',
                 )}
-                key={index}
-              >
+                key={index}>
                 {link.label}
               </Link>
             ))}
             <a
               href="#"
               className="uppercase text-white transition-all duration-500 hover:text-ouro text-xl"
-              target="_blank"
-            >
+              target="_blank">
               Enoturismo
             </a>
             <a
               href="#"
               className="uppercase text-white transition-all duration-500 hover:text-ouro text-xl"
-              target="_blank"
-            >
+              target="_blank">
               Blog
             </a>
             <Link
               href="/contato"
               className={twMerge(
-                "uppercase text-white transition-all duration-500 hover:text-ouro text-xl",
-                "/contato" === path && "text-ouro"
-              )}
-            >
+                'uppercase text-white transition-all duration-500 hover:text-ouro text-xl',
+                '/contato' === path && 'text-ouro',
+              )}>
               Contato
             </Link>
             <a href="#" target="_blank">
