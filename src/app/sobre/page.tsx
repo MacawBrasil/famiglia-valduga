@@ -6,20 +6,20 @@ import Image from "next/image";
 export default function Sobre() {
   return (
     <>
-      <div className="relative w-screen h-[893px] bg-black bg-hero-sobre bg-cover bg-top flex flex-col items-center justify-center">
+      <div className="relative w-screen h-[893px] bg-black bg-hero-sobre bg-cover bg-top flex flex-col items-center justify-center sm:h-[1300px]">
         <Navbar />
-        <div className="flex flex-col items-center">
-          <span className="text-white text-[88px] font-normal font-['Baskerville']">
+        <div className="flex flex-col items-center sm:absolute sm:top-52 sm:left-1/2 sm:-translate-x-1/2 sm:w-full sm:text-center sm:gap-4">
+          <span className="text-white text-[88px] font-normal font-basker lg:text-7xl md:text-5xl">
             A FAMIGLIA VALDUGA
           </span>
-          <div className="text-white text-lg font-normal font-['Montserrat'] leading-[27px] mb-24">
+          <div className="text-white text-lg font-normal font-mont leading-[27px] mb-24">
             Das raízes italianas à concretização de um sonho
           </div>
           <IconArrowBottom />
         </div>
 
-        <div className="absolute -bottom-[136px] left-1/2 -translate-x-1/2 bg-white shadow p-16">
-          <p className="w-[875px] text-center text-stone-600 text-2xl font-normal font-['Montserrat'] leading-9">
+        <div className="absolute -bottom-[136px] left-1/2 -translate-x-1/2 bg-white shadow p-16 md:w-11/12">
+          <p className="w-[875px] text-center text-stone-600 text-2xl font-normal font-mont leading-9 md:w-full">
             Nossa história começa em 1875, com a chegada da família Valduga ao
             Brasil. Vindos da cidade de Rovereto, ao norte da Itália, os
             imigrantes trouxeram na mala a paixão pelo vinho e o desejo de
@@ -29,9 +29,9 @@ export default function Sobre() {
           </p>
         </div>
       </div>
-      <div className="w-screen pt-[306px] pb-[173px] flex items-center justify-center">
-        <div className="w-[1034px] h-[820px] relative">
-          <div className="w-[447px] left-[29px] top-0 absolute text-stone-600 text-lg font-normal font-['Montserrat'] leading-[27px]">
+      <div className="w-screen pt-[306px] pb-[173px] flex items-center justify-center sm:px-6">
+        <div className="w-[1034px] h-[820px] relative lg:flex flex-col lg:items-center lg:h-auto lg:gap-14 lg:text-center sm:w-full">
+          <div className="w-[447px] left-[29px] top-0 absolute text-stone-600 text-lg font-normal font-mont leading-[27px] lg:static lg:order-2 sm:w-full">
             Mais de um século e quatro gerações depois, o sonho de construir uma
             vinícola referência no Brasil é uma realidade. Com a ajuda dos
             filhos, o casal Luiz e Maria Valduga aliou tradição e tecnologia
@@ -46,20 +46,20 @@ export default function Sobre() {
             excelência.
           </div>
           <Image
-            className="left-[546px] top-[418px] absolute"
+            className="left-[546px] top-[418px] absolute lg:static lg:order-1"
             width={488}
             height={402}
             src="/img1-sobre.png"
             alt="image sobre"
           />
           <Image
-            className="left-[546px] top-0 absolute"
+            className="left-[546px] top-0 absolute lg:static  lg:order-3"
             width={488}
             height={402}
             src="/img2-sobre.png"
             alt="image sobre"
           />
-          <IconValduga className="absolute left-0 top-[649.29px]" />
+          <IconValduga className="absolute left-0 top-[649.29px] lg:static lg:order-4" />
         </div>
       </div>
       <Footer />

@@ -15,40 +15,42 @@ const center = {
 export default function Contato() {
   return (
     <>
-      <div className="relative w-screen bg-black pt-11 h-[894px] bg-hero-contact bg-cover bg-top">
+      <div className="relative w-screen bg-black h-[894px] bg-hero-contact bg-cover bg-top lg:h-[1500px]">
         <Navbar />
-        <Wrapper className="flex justify-between absolute -bottom-[132px] left-1/2 -translate-x-1/2">
-          <div className="flex flex-col gap-7">
-            <div className="flex flex-col">
-              <h1 className="text-white text-[88px] font-normal font-['Baskerville'] uppercase leading-[110px]">
+        <Wrapper className="w-full flex justify-between flex-wrap absolute -bottom-[132px] left-1/2 -translate-x-1/2 lg:items-center lg:w-full lg:justify-center lg:text-center">
+          <div className="flex flex-col gap-7 lg:items-center lg:mb-10 sm:w-full">
+            <div className="flex flex-col sm:w-full">
+              <h1 className="text-white text-[88px] font-normal font-basker uppercase leading-[110px] sm:text-7xl">
                 Fale <br />
                 Conosco
               </h1>
-              <p className="text-white text-lg font-normal font-['Montserrat'] leading-[27px]">
+              <p className="text-white text-lg font-normal font-mont leading-[27px]">
                 Envie suas dúvidas e sugestões
               </p>
             </div>
-            <div>
-              <span className="text-ouro text-lg font-normal font-['Montserrat'] leading-[27px]">
+            <div className="sm:w-full">
+              <span className="text-ouro text-lg font-normal font-mont leading-[27px]">
                 Entre em contato
               </span>
-              <div className="text-white text-[26px] font-medium font-['Montserrat'] leading-[39px]">
+              <div className="text-white text-[26px] font-medium font-mont leading-[39px]">
                 (54) 2105.3122
               </div>
             </div>
-            <div>
-              <span className="text-ouro text-lg font-normal font-['Montserrat'] leading-[27px]">
+            <div className="sm:w-full sm:flex sm:flex-wrap sm:items-center sm:justify-center">
+              <span className="text-ouro text-lg font-normal font-mont leading-[27px]">
                 Envie um e-mail
               </span>
-              <div className="text-white text-[26px] font-medium font-['Montserrat'] leading-[39px]">
+              <p className="text-white text-[26px] font-medium font-mont leading-[39px] sm:w-full sm:text-center sm:text-lg">
                 faleconosco@casavalduga.com.br
-              </div>
+              </p>
             </div>
-            <div>
-              <span className="text-ouro text-lg font-normal font-['Montserrat'] leading-[27px]">
+            <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
+              <span className="text-ouro text-lg font-normal font-mont leading-[27px]">
                 Faça parte da nossa equipe
               </span>
-              <Button className="mt-4">Trabalhe conosco</Button>
+              <Button className="mt-4 font-mont text-sm font-normal">
+                Trabalhe conosco
+              </Button>
             </div>
           </div>
           <FormContact />

@@ -16,7 +16,7 @@ export const Button = ({
     <button
       {...props}
       className={twMerge(
-        "px-7 py-3.5 flex cursor-pointer items-center justify-center border rounded border-ouro_light text-ouro_light text-sm uppercase font-[--font-montserrat]",
+        "px-7 py-3.5 flex cursor-pointer items-center justify-center border rounded border-ouro_light text-ouro_light text-sm uppercase font-basker transition-all duration-500 hover:bg-ouro hover:text-white",
         className
       )}
     >

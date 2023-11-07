@@ -6,6 +6,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
+  fallback: ["Arial"],
 });
 
 const baskervville = Baskervville({
@@ -14,6 +15,7 @@ const baskervville = Baskervville({
   weight: "400",
   variable: "--font-baskervville",
   subsets: ["latin"],
+  fallback: ["Arial"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <body className={`${montserrat.variable} ${baskervville.variable}`}>
         {children}
       </body>

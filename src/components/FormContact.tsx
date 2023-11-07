@@ -73,30 +73,30 @@ export const FormContact = () => {
         className="w-[591px] p-8 bg-white rounded shadow flex flex-col items-end gap-6"
         onSubmit={onSubmit}
       >
-        <div className="w-full flex flex-col gap-2 mdd:items-start">
-          <label className="text-stone-600 text-base font-semibold font-['Montserrat'] leading-normal">
+        <div className="w-full flex flex-col gap-2 items-start">
+          <label className="text-stone-600 text-base font-semibold font-mont leading-normal">
             Nome:
           </label>
           <input
             type="text"
             {...register("name")}
             placeholder="Seu nome completo"
-            className="h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
+            className="w-full h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
           />
         </div>
-        <div className="w-full flex flex-col gap-2 mdd:items-start">
-          <label className="text-stone-600 text-base font-semibold font-['Montserrat'] leading-normal">
+        <div className="w-full flex flex-col gap-2 items-start">
+          <label className="text-stone-600 text-base font-semibold font-mont leading-normal">
             E-mail:
           </label>
           <input
             type="text"
             {...register("email")}
             placeholder="exemplo@gmail.com"
-            className="h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
+            className="w-full h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
           />
         </div>
-        <div className="w-full flex flex-col gap-2 mdd:items-start">
-          <label className="text-stone-600 text-base font-semibold font-['Montserrat'] leading-normal ">
+        <div className="w-full flex flex-col gap-2 items-start">
+          <label className="text-stone-600 text-base font-semibold font-mont leading-normal ">
             Telefone:
           </label>
           <Controller
@@ -110,7 +110,7 @@ export const FormContact = () => {
                 mask="(__) _____-____"
                 replacement={{ _: /\d/ }}
                 {...field}
-                className="h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
+                className="w-full h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
               />
             )}
           />
@@ -118,8 +118,8 @@ export const FormContact = () => {
             {errors.phone?.message}
           </span>
         </div>
-        <div className="w-full flex flex-col gap-2 mdd:items-start">
-          <label className=" text-stone-600 text-base font-semibold font-['Montserrat'] leading-normal ">
+        <div className="w-full flex flex-col gap-2 items-start">
+          <label className=" text-stone-600 text-base font-semibold font-mont leading-normal ">
             Mensagem:
           </label>
           <textarea
@@ -130,11 +130,11 @@ export const FormContact = () => {
         </div>
         <div className="w-full flex gap-3">
           <input type="checkbox" {...register("polices")} />
-          <span className="text-stone-400 text-sm font-normal font-['Montserrat'] leading-[21px]">
+          <span className="text-stone-400 text-sm font-normal font-mont leading-[21px]">
             Eu concordo com a{" "}
             <a
               href="#"
-              className="text-ouro text-sm font-normal font-['Montserrat'] leading-[21px]"
+              className="text-ouro text-sm font-normal font-mont leading-[21px]"
             >
               política de privacidade
             </a>

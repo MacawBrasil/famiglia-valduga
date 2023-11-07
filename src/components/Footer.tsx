@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   CasaMadeira,
@@ -11,31 +12,56 @@ import {
 } from "./SVGS";
 import { Wrapper } from "./wrapper";
 import { Button } from "./Button";
+import { usePathname } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 export const Footer = () => {
+  const path = usePathname();
   return (
     <footer className="bg-[#171614] w-screen pt-16">
       <Wrapper className="flex flex-col items-center justify-center m-auto gap-24">
         <Logo />
-        <nav className="w-full flex items-center justify-center gap-12">
-          <Link href="/" className="uppercase text-white">
+        <nav className="w-full flex items-center justify-center gap-12 flex-wrap">
+          <Link
+            href="/"
+            className={twMerge(
+              "uppercase text-white transition-all duration-500 hover:text-ouro",
+              "/" === path && "text-ouro"
+            )}
+          >
             Home
           </Link>
-          <Link href="/a-famiglia" className="uppercase text-white">
+          <Link
+            href="/sobre"
+            className={twMerge(
+              "uppercase text-white transition-all duration-500 hover:text-ouro",
+              "/sobre" === path && "text-ouro"
+            )}
+          >
             A famiglia
           </Link>
-          <Link href="/enoturismo" className="uppercase text-white">
+          <a href="#" target="_blank" className="uppercase text-white">
             Enoturismo
-          </Link>
-          <Link href="/blog" className="uppercase text-white">
+          </a>
+          <a href="#" target="_blank" className="uppercase text-white">
             Blog
-          </Link>
-          <Link href="/contato" className="uppercase text-white">
+          </a>
+          <Link
+            href="/contato"
+            className={twMerge(
+              "uppercase text-white transition-all duration-500 hover:text-ouro",
+              "/contato" === path && "text-ouro"
+            )}
+          >
             Contato
           </Link>
-          <Button>Compre online</Button>
+          <a href="#" target="_blank">
+            <Button className="text-sm font-normal font-mont">
+              Compre online
+            </Button>
+          </a>
         </nav>
-        <div className="w-full flex items-center justify-center gap-16">
+        <div className="w-full flex items-center justify-center gap-16 flex-wrap">
           <LogoCasaValduga />
           <Leopoldina />
           <CasaMadeira />
@@ -43,23 +69,23 @@ export const Footer = () => {
           <Nero />
           <Vinotage />
         </div>
-        <div className="w-full flex items-center justify-between border-t-[1px] border-white border-opacity-20 py-14">
-          <div className="flex items-center gap-16">
+        <div className="w-full flex items-center justify-between flex-wrap border-t-[1px] border-white border-opacity-20 py-14 sm:justify-center sm:gap-5">
+          <div className="flex items-center gap-16 flex-wrap justify-center">
             <Link
               href="#"
-              className="text-white text-opacity-60 text-sm font-normal font-['Montserrat']"
+              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro"
             >
               Politica de privacidade
             </Link>
             <Link
               href="#"
-              className="text-white text-opacity-60 text-sm font-normal font-['Montserrat']"
+              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro"
             >
               Politica de cookies
             </Link>
           </div>
           <a href="https://macawbrasil.com.br" target="_blank">
-            <LogoMacaw />
+            <LogoMacaw className="transition-all duration-500 hover:scale-125" />
           </a>
         </div>
       </Wrapper>

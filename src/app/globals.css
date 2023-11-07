@@ -2,25 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: var(--font-montserrat);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h7,
-h8,
-h9,
-h10 {
-  font-family: var(--font-baskervville);
-}
-
 .contact-map {
-  width: 100%;
-  height: 853px;
-  z-index: -1;
+  @apply w-full h-[853px] -z-10;
+}
+
+.swiper-hero {
+  @apply w-screen h-[795px] relative sm:h-screen;
+}
+
+.swiper-hero .swiper-button-prev {
+  @apply left-60 text-white opacity-50 lg:left-9;
+}
+
+.swiper-hero .swiper-button-next {
+  @apply right-60 text-white opacity-50 lg:right-9;
+}
+
+.swiper-hero .swiper-pagination {
+  @apply bottom-[71px] !important;
+}
+
+.swiper-hero .swiper-pagination .swiper-pagination-bullet {
+  @apply bg-white bg-opacity-90;
+}
+
+.swiper-hero .swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-transparent border border-white border-opacity-80;
 }
