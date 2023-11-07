@@ -1,35 +1,35 @@
-"use client";
-import { Controller, useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { InputMask } from "@react-input/mask";
-import { ClipLoader } from "react-spinners";
-import { ToastContainer, toast } from "react-toastify";
-import { Button } from "./Button";
+'use client';
+import { Controller, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { InputMask } from '@react-input/mask';
+import { ClipLoader } from 'react-spinners';
+import { ToastContainer, toast } from 'react-toastify';
+import { Button } from './Button';
 
 const notifySuccess = () => {
-  toast.success("Mensagem enviada com sucesso", {
-    position: "bottom-right",
+  toast.success('Mensagem enviada com sucesso', {
+    position: 'bottom-right',
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "light",
+    theme: 'light',
   });
 };
 
 const notifyError = () => {
-  toast.error("Algo de errado aconteceu.", {
-    position: "bottom-right",
+  toast.error('Algo de errado aconteceu.', {
+    position: 'bottom-right',
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "light",
+    theme: 'light',
   });
 };
 
@@ -47,39 +47,35 @@ export const FormContact = () => {
     control,
     reset,
     handleSubmit,
-    formState: { errors, isValid, isSubmitting },
+    formState: { errors, isValid, isSubmitting, isSubmitted },
   } = useForm({
     resolver: yupResolver(schema),
   });
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await fetch("/api/contact", {
+      await fetch('/api/contact', {
         body: JSON.stringify(data),
-        method: "POST",
+        method: 'POST',
       });
       reset();
-      notifySuccess();
       return;
     } catch (error) {
       console.log(error);
-      notifyError();
       reset();
     }
   });
   return (
     <>
-      <ToastContainer />
       <form
-        className="w-[591px] p-8 bg-white rounded shadow flex flex-col items-end gap-6"
-        onSubmit={onSubmit}
-      >
+        className="w-[591px] p-8 bg-white rounded shadow flex flex-col items-end gap-6 relative"
+        onSubmit={onSubmit}>
         <div className="w-full flex flex-col gap-2 items-start">
           <label className="text-stone-600 text-base font-semibold font-mont leading-normal">
             Nome:
           </label>
           <input
             type="text"
-            {...register("name")}
+            {...register('name')}
             placeholder="Seu nome completo"
             className="w-full h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
           />
@@ -90,7 +86,7 @@ export const FormContact = () => {
           </label>
           <input
             type="text"
-            {...register("email")}
+            {...register('email')}
             placeholder="exemplo@gmail.com"
             className="w-full h-14 bg-white rounded border border-stone-300 pl-3 focus:outline-ouro"
           />
@@ -123,19 +119,18 @@ export const FormContact = () => {
             Mensagem:
           </label>
           <textarea
-            {...register("message")}
+            {...register('message')}
             className="resize-none w-full h-[189px] bg-white rounded border border-stone-300 pl-3 pt-3 focus:outline-ouro"
             placeholder="Digite aqui a sua mensagem"
           />
         </div>
         <div className="w-full flex gap-3">
-          <input type="checkbox" {...register("polices")} />
+          <input type="checkbox" {...register('polices')} />
           <span className="text-stone-400 text-sm font-normal font-mont leading-[21px]">
-            Eu concordo com a{" "}
+            Eu concordo com a{' '}
             <a
               href="#"
-              className="text-ouro text-sm font-normal font-mont leading-[21px]"
-            >
+              className="text-ouro text-sm font-normal font-mont leading-[21px]">
               política de privacidade
             </a>
           </span>
@@ -143,8 +138,7 @@ export const FormContact = () => {
         <Button
           type="submit"
           className="flex items-center justify-center disabled:bg-opacity-80"
-          disabled={!isValid}
-        >
+          disabled={!isValid}>
           {isSubmitting ? (
             <ClipLoader
               color="#FDF1E4"
@@ -154,9 +148,14 @@ export const FormContact = () => {
               data-testid="loader"
             />
           ) : (
-            "Enviar mensagem"
+            'Enviar mensagem'
           )}
         </Button>
+        {isSubmitted && (
+          <span className="text-green-700 text-base font-semibold font-mont leading-normal absolute left-8 bottom-8">
+            Mensagem enviada com sucesso!
+          </span>
+        )}
       </form>
     </>
   );

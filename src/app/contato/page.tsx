@@ -36,7 +36,7 @@ export default function Contato() {
                 (54) 2105.3122
               </div>
             </div>
-            <div className="sm:w-full sm:flex sm:flex-wrap sm:items-center sm:justify-center">
+            <div className="w-full flex flex-wrap flex-col items-start justify-center">
               <span className="text-ouro text-lg font-normal font-mont leading-[27px]">
                 Envie um e-mail
               </span>
