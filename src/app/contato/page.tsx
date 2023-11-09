@@ -1,5 +1,6 @@
 'use client';
 
+import { Animated } from '@/components/Animated';
 import { Button } from '@/components/Button';
 import { Footer } from '@/components/Footer';
 import { FormContact } from '@/components/FormContact';
@@ -18,7 +19,7 @@ export default function Contato() {
       <div className="relative w-screen bg-black h-[894px] bg-hero-contact bg-cover bg-top lg:h-[1500px]">
         <Navbar />
         <Wrapper className="w-full flex justify-between flex-wrap absolute -bottom-[132px] left-1/2 -translate-x-1/2 lg:items-center lg:w-full lg:justify-center lg:text-center">
-          <div className="flex flex-col gap-7 lg:items-center lg:mb-10 sm:w-full">
+          <Animated className="flex flex-col gap-7 lg:items-center lg:mb-10 sm:w-full">
             <div className="flex flex-col sm:w-full sm:gap-3">
               <h1 className="text-white text-[88px] font-normal font-basker uppercase leading-[110px] sm:text-4xl sm:w-full">
                 Fale <br />
@@ -54,11 +55,11 @@ export default function Contato() {
                 Trabalhe conosco
               </Button>
             </div>
-          </div>
+          </Animated>
           <FormContact />
         </Wrapper>
       </div>
-      <div>
+      <Animated>
         <LoadScript
           googleMapsApiKey="AIzaSyANNESsO4kHnMMVPoARbu6-cv4sfnYwK1k"
           onError={(error) => console.log(error)}>
@@ -75,7 +76,7 @@ export default function Contato() {
             />
           </GoogleMap>
         </LoadScript>
-      </div>
+      </Animated>
       <Footer />
     </>
   );

@@ -1,9 +1,10 @@
-"use client";
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-import { IconSelected, IconSeparator } from "./SVGS";
-import { useState } from "react";
-import Modal from "./Modal";
+'use client';
+import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
+import { IconSelected, IconSeparator } from './SVGS';
+import { useState } from 'react';
+import Modal from './Modal';
+import { Animated } from './Animated';
 
 interface iHistory {
   year: number;
@@ -22,22 +23,19 @@ export const History = ({ index, year }: iHistory) => {
   };
 
   return (
-    <div
+    <Animated
       className="flex items-center gap-[72px] -ml-[300px] odd:ml-0 odd:-mr-[300px] md:-ml-[0] md:odd:ml-0 md:odd:-mr-[0] sm:w-full sm:flex-col sm:gap-4"
-      id={`${year}`}
-    >
+      id={`${year}`}>
       <div
         className={twMerge(
-          "flex flex-col items-center gap-5 group",
-          index % 2 !== 0 && "order-1"
-        )}
-      >
+          'flex flex-col items-center gap-5 group',
+          index % 2 !== 0 && 'order-1',
+        )}>
         <div
           className={twMerge(
-            "w-[140px] h-[140px] rounded-full relative cursor-pointer transition-all duration-500 group-hover:w-[196px] group-hover:h-[196px] sm:w-[100px] sm:h-[100px] sm:group-hover:w-[146px] sm:group-hover:h-[146px]"
+            'w-[140px] h-[140px] rounded-full relative cursor-pointer transition-all duration-500 group-hover:w-[196px] group-hover:h-[196px] sm:w-[100px] sm:h-[100px] sm:group-hover:w-[146px] sm:group-hover:h-[146px]',
           )}
-          onClick={openModal}
-        >
+          onClick={openModal}>
           <Image src="/img-history.png" fill alt="img-history" />
           <IconSelected className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 transition-all duration-500 group-hover:opacity-100" />
         </div>
@@ -57,6 +55,6 @@ export const History = ({ index, year }: iHistory) => {
         </span>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-    </div>
+    </Animated>
   );
 };

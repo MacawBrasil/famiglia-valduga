@@ -4,34 +4,8 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputMask } from '@react-input/mask';
 import { ClipLoader } from 'react-spinners';
-import { ToastContainer, toast } from 'react-toastify';
 import { Button } from './Button';
-
-const notifySuccess = () => {
-  toast.success('Mensagem enviada com sucesso', {
-    position: 'bottom-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: 'light',
-  });
-};
-
-const notifyError = () => {
-  toast.error('Algo de errado aconteceu.', {
-    position: 'bottom-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: 'light',
-  });
-};
+import { Animated } from './Animated';
 
 const schema = yup.object({
   name: yup.string().required(),
@@ -65,7 +39,7 @@ export const FormContact = () => {
     }
   });
   return (
-    <>
+    <Animated>
       <form
         className="w-[591px] p-8 bg-white rounded shadow flex flex-col items-end gap-6 relative"
         onSubmit={onSubmit}>
@@ -157,6 +131,6 @@ export const FormContact = () => {
           </span>
         )}
       </form>
-    </>
+    </Animated>
   );
 };
