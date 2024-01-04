@@ -3,9 +3,14 @@ import { Button } from '@/components/Button';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import {
+  CasaMadeira,
+  Domnowines,
   IconValduga,
+  Leopoldina,
   LogoCasaValduga,
+  Nero,
   TitleNossaHistoria,
+  Vinotage,
 } from '@/components/SVGS';
 import { SwiperHero } from '@/components/SwiperHero';
 import { SwiperHistory } from '@/components/SwiperHistory';
@@ -30,12 +35,36 @@ export default function Home() {
           Conheça as marcas do grupo
         </span>
         <div className="w-full flex justify-center flex-wrap gap-4 lg:justify-center">
-          <Board />
-          <Board />
-          <Board />
-          <Board />
-          <Board />
-          <Board />
+          <Board
+            logo={
+              <LogoCasaValduga className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            logo={
+              <Leopoldina className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            logo={
+              <Domnowines className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            logo={
+              <Nero className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            logo={
+              <Vinotage className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            logo={
+              <LogoCasaValduga className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
         </div>
       </div>
       <div className="w-screen flex flex-col gap-4 items-center justify-center pt-[218px] pb-52 md:px-8">

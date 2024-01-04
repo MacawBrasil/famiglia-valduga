@@ -38,8 +38,10 @@ export default function Sobre() {
             filhos, o casal Luiz e Maria Valduga aliou tradição e tecnologia
             para modernizar a elaboração de vinhos finos. E o resultado não
             poderia ser outro: a Casa Valduga hoje se consolida entre as marcas
-            líderes do Brasil. Com o tempo, o trabalho da família foi muito além
-            da vinícola e transformou-se no Grupo Famiglia Valduga, reconhecido
+            líderes do Brasil. <br />
+            <br />
+            Com o tempo, o trabalho da família foi muito além da vinícola e
+            transformou-se no Grupo Famiglia Valduga, reconhecido
             internacionalmente pela qualidade dos seus produtos e pelos prêmios
             conquistados pelo mundo. Atualmente, o Grupo é formado por 5
             empresas e administrado pela família, mantendo viva a paixão pelo

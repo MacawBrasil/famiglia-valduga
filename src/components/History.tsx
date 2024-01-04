@@ -41,7 +41,7 @@ export const History = ({ index, year }: iHistory) => {
         </div>
         <div className="flex flex-col items-center gap-6 opacity-0 transition-all duration-500 group-hover:opacity-100 sm:opacity-100">
           <span className="uppercase text-center text-stone-950 text-[21px] font-normal font-basker">
-            O desenbarque
+            O desembarque
           </span>
           <div className="uppercase text-center text-ouro_light text-xs font-bold font-mont">
             saiba mais

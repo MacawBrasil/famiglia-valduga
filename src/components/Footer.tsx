@@ -1,5 +1,5 @@
-"use client";
-import Link from "next/link";
+'use client';
+import Link from 'next/link';
 import {
   CasaMadeira,
   Domnowines,
@@ -9,11 +9,11 @@ import {
   LogoMacaw,
   Nero,
   Vinotage,
-} from "./SVGS";
-import { Wrapper } from "./wrapper";
-import { Button } from "./Button";
-import { usePathname } from "next/navigation";
-import { twMerge } from "tailwind-merge";
+} from './SVGS';
+import { Wrapper } from './wrapper';
+import { Button } from './Button';
+import { usePathname } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
 
 export const Footer = () => {
   const path = usePathname();
@@ -25,19 +25,17 @@ export const Footer = () => {
           <Link
             href="/"
             className={twMerge(
-              "uppercase text-white transition-all duration-500 hover:text-ouro",
-              "/" === path && "text-ouro"
-            )}
-          >
+              'uppercase text-white transition-all duration-500 hover:text-ouro',
+              '/' === path && 'text-ouro',
+            )}>
             Home
           </Link>
           <Link
             href="/sobre"
             className={twMerge(
-              "uppercase text-white transition-all duration-500 hover:text-ouro",
-              "/sobre" === path && "text-ouro"
-            )}
-          >
+              'uppercase text-white transition-all duration-500 hover:text-ouro',
+              '/sobre' === path && 'text-ouro',
+            )}>
             A famiglia
           </Link>
           <a href="#" target="_blank" className="uppercase text-white">
@@ -49,10 +47,9 @@ export const Footer = () => {
           <Link
             href="/contato"
             className={twMerge(
-              "uppercase text-white transition-all duration-500 hover:text-ouro",
-              "/contato" === path && "text-ouro"
-            )}
-          >
+              'uppercase text-white transition-all duration-500 hover:text-ouro',
+              '/contato' === path && 'text-ouro',
+            )}>
             Contato
           </Link>
           <a href="#" target="_blank">
@@ -72,15 +69,13 @@ export const Footer = () => {
         <div className="w-full flex items-center justify-between flex-wrap border-t-[1px] border-white border-opacity-20 py-14 sm:justify-center sm:gap-5">
           <div className="flex items-center gap-16 flex-wrap justify-center">
             <Link
-              href="#"
-              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro"
-            >
+              href="https://famigliavalduga.vteximg.com.br/arquivos/Politica-de-Privacidade-Famiglia-Valduga.pdf"
+              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro">
               Politica de privacidade
             </Link>
             <Link
-              href="#"
-              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro"
-            >
+              href="https://famigliavalduga.vteximg.com.br/arquivos/Politica-de-Cookies-Famiglia-Valduga.pdf"
+              className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro">
               Politica de cookies
             </Link>
           </div>
