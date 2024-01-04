@@ -36,33 +36,39 @@ export default function Home() {
         </span>
         <div className="w-full flex justify-center flex-wrap gap-4 lg:justify-center">
           <Board
+            background="/bg-card.png"
             logo={
               <LogoCasaValduga className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
             }
           />
           <Board
+            background="/bg-casa-madeira.png"
+            logo={
+              <CasaMadeira className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
+            }
+          />
+          <Board
+            background="/bg-leopoldina.png"
             logo={
               <Leopoldina className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
             }
           />
           <Board
+            background="/bg-domino.png"
             logo={
               <Domnowines className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
             }
           />
           <Board
+            background="/bg-nero.png"
             logo={
               <Nero className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
             }
           />
           <Board
+            background="/bg-vinotage.png"
             logo={
               <Vinotage className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
-            }
-          />
-          <Board
-            logo={
-              <LogoCasaValduga className="absolute left-1/2 -translate-x-1/2 bottom-14 z-10 transition-all duration-500 group-hover:top-14" />
             }
           />
         </div>

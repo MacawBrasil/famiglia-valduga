@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { Button } from './Button';
-import { LogoCasaValduga } from './SVGS';
 import { Animated } from './Animated';
 import { ReactNode } from 'react';
 
 interface iBoard {
   logo: ReactNode;
+  background: string;
 }
 
-export const Board = ({ logo }: iBoard) => {
+export const Board = ({ logo, background }: iBoard) => {
   return (
     <Animated className="w-[438px] h-[520px] rounded relative overflow-hidden transition-all duration-500 group 1xl:w-[400px]">
       {logo}
@@ -22,9 +22,10 @@ export const Board = ({ logo }: iBoard) => {
         </a>
       </div>
       <Image
-        src="/bg-card.png"
+        src={background}
         fill
         alt="image"
+        quality={100}
         className="object-cover z-0 transition-all duration-500 group-hover:scale-125"
       />
     </Animated>
