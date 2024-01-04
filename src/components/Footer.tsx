@@ -70,11 +70,13 @@ export const Footer = () => {
           <div className="flex items-center gap-16 flex-wrap justify-center">
             <Link
               href="https://famigliavalduga.vteximg.com.br/arquivos/Politica-de-Privacidade-Famiglia-Valduga.pdf"
+              target="_blank"
               className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro">
               Politica de privacidade
             </Link>
             <Link
               href="https://famigliavalduga.vteximg.com.br/arquivos/Politica-de-Cookies-Famiglia-Valduga.pdf"
+              target="_blank"
               className="text-white text-opacity-60 text-sm font-normal font-mont transition-all duration-500 hover:text-ouro">
               Politica de cookies
             </Link>
