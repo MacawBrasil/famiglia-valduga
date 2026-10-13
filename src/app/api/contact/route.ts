@@ -1,15 +1,12 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-import sgMail from '@sendgrid/mail';
-
-sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
+import { sendEmail } from "../../../lib/smtp-mail";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const res = await req.json();
   try {
-    await sgMail.send({
-      to: 'desenvolvimento2@macawbrasil.com.br',
-      from: `Nova mensagem do site Famiglia Valduga Docê<enviosmacaw@gmail.com>`,
+    await sendEmail({
+      to: "desenvolvimento2@macawbrasil.com.br",
+
       subject: `Nova mensagem vinda do site Famiglia Valduga - Contato`,
       replyTo: res.email,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31,6 +28,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.log(error);
-    return new Response('Error', { status: 400 });
+    return new Response("Error", { status: 400 });
   }
 }
